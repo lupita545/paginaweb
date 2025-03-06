@@ -1,0 +1,28 @@
+{
+    "name": "Aplicación",
+    "short_name": "Usuarios",
+    "description": "Puedes registrarte",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f0f0f0",
+    "theme_color": "#007acc",
+    "icons": [
+      {
+        "src": "/src/icons/im.jpg",
+        "sizes": "128x128",
+        "type": "image/jpeg"
+      },
+      {
+        "src": "/src/icons/gato_marron_0_R5m_icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+
+      {
+        "src": "/src/icons/gato_marron_0_zaR_icon.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
+    ]
+  }
+  

@@ -1,0 +1,102 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif; 
+  background: rgba(70, 69, 69, 0.7); 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #f8f9fa; 
+}
+
+form {
+  max-width: 500px; /* Tamaño del formulario */
+  margin: 1rem auto;
+  padding: 2rem; 
+  background: rgba(255, 255, 200, 0.9); 
+  border-radius: 12px; 
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 15px rgba(9, 175, 92, 0.2); 
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #007bff; /* Color del encabezado */
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.9rem; 
+  color: #000000;
+  margin: 0.8rem 0; 
+  background-color: #ffffff;
+  border: 1px solid #ced4da; 
+  border-radius: 6px; 
+  font-size: 1rem;
+  transition: border-color 0.3s; 
+}
+
+input:focus {
+  border-color: #0a0a0a; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+
+button {
+  width: 100%;
+  padding: 0.9rem; 
+  background: #d454f1; 
+  color: #ffffff;
+  font-size: 1rem; 
+  font-weight: bold;
+  border-radius: 6px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; 
+}
+
+button:hover {
+  background: #5e41e1; 
+  transform: scale(1.02); 
+}
+
+
+@media (max-width: 768px) {
+  form {
+    padding: 1.5rem; 
+  }
+
+  input,
+  button {
+    font-size: 0.9rem; 
+  }
+}
+
+
+.link {
+  text-align: center; 
+  margin-top: 1rem; 
+  color: #3f88d6;
+  cursor: pointer;
+  display: inline; 
+}
+
+.link:hover {
+  text-decoration: underline; 
+}
+
+/* Contenedor parrafo */
+p {
+  text-align: center; 
+  margin-top: 1.5rem;
+  color: #fbfcfd; 
+}
