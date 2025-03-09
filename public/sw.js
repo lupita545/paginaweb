@@ -34,6 +34,7 @@ self.addEventListener('install', event => {
     self.skipWaiting();
 });
 
+
 self.addEventListener('activate', event => {
     caches.delete("appShell2");
     caches.delete("dinamico2");
