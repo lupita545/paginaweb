@@ -29,6 +29,12 @@ navigator.serviceWorker.register('./sw.js', { type: 'module' })
         console.log("Error registrando service", error);
     });
 
+    let db = window.indexedDB.open('database');
+db.onupgradeneeded = event => {
+  let result = event.target.result;
+  result.createObjectStore('libros', { autoIncrement: true });
+};
+
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <App />

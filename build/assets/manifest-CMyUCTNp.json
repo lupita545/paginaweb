@@ -8,18 +8,18 @@
     "theme_color": "#007acc",
     "icons": [
       {
-        "src": "/imagenes/im.jpg",
+        "src": "/src/icons/im.jpg",
         "sizes": "128x128",
         "type": "image/jpeg"
       },
       {
-        "src": "/imagenes/gato_marron_0_R5m_icon.png",
+        "src": "/src/icons/gato_marron_0_R5m_icon.png",
         "sizes": "192x192",
         "type": "image/png"
       },
 
       {
-        "src": "/imagenes/gato_marron_0_zaR_icon.png",
+        "src": "/src/icons/gato_marron_0_zaR_icon.png",
         "sizes": "256x256",
         "type": "image/png"
       }
