@@ -5,7 +5,7 @@ const Login = () => {
     correo: '',
     contrasena: '',
   });
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -29,7 +29,7 @@ const Login = () => {
       }
 
       const data = await response.json();
-      console.log('Inicio de sesión correcto:', data);
+      alert("Bienvenido"); // ✅ Se agregó el alert cuando el inicio de sesión es exitoso
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);

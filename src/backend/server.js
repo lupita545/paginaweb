@@ -104,19 +104,30 @@ app.post('/save-subs', async (req, res) => {
 webpush.setVapidDetails('mailto:prueba@gmail.com', keys.publicKey, keys.privateKey);
 
 // Enviar notificación push
-async function sendPush(req, res) {
-    try {
-      const subscriptions = await Subscription.find();
-      const notifications = subscriptions.map(sub => 
-        webpush.sendNotification(sub, "Nuevo mensaje")
-      );
-      await Promise.all(notifications);
-      res.json({ mensaje: "Notificación enviada" });
-    } catch (error) {
-      console.error('Error al enviar', error);
-      res.status(500).json({ mensaje: "No se pudo enviar" });
+app.post('/sendPush/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    // Buscar usuario por ID
+    const usuario = await Usuario.findById(id);
+    if (!usuario || !usuario.subscription) {
+      return res.status(404).json({ error: 'Usuario no encontrado o sin suscripción' });
     }
+
+    const payload = JSON.stringify({
+      title: "Notificación",
+      body: "Tienes una notificación"
+    });
+
+    // Enviar la notificación
+    await webpush.sendNotification(usuario.subscription, payload);
+
+    res.json({ mensaje: "Notificación enviada correctamente" });
+  } catch (error) {
+    console.error('Error al enviar notificación:', error);
+    res.status(500).json({ mensaje: "No se pudo enviar la notificación", details: error.message });
   }
+});
   
   const clientBuildPath = path.join(__dirname, '../../build');
   if (fs.existsSync(clientBuildPath)) {

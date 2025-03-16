@@ -112,17 +112,9 @@ self.addEventListener('sync', event => {
     }
 });
 
-self.addEventListener('push', event=>{
-    const options={
-        body:"hola",
-        icon:"/mishito.jpg",
-        image:"/nutela.jpg"
-    }
-self.registration.showNotification("Titulo", options);
+self.addEventListener('push', event => {
+    self.registration.showNotification("Tienes una notificación");
 });
-
-
-
 
 
 
