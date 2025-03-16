@@ -116,7 +116,7 @@ app.post('/sendPush/:id', async (req, res) => {
 
     const payload = JSON.stringify({
       title: "Notificación",
-      body: "Tienes una notificación"
+      body: "Hola bienvenido"
     });
 
     // Enviar la notificación
