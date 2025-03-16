@@ -1,4 +1,3 @@
-// register.jsx
 import React, { useState } from 'react';
 
 const Register = () => {
@@ -27,14 +26,14 @@ const Register = () => {
             let store = transaction.objectStore("libros");
             let resultado = store.add(data);
             resultado.onsuccess = () => {
-                console.log("Usuario registrado en Indexed)", data);
+                console.log("Usuario registrado en IndexedDB", data);
             };
             resultado.onerror = event2 => {
-                console.error("Error al insertar en Indexed", event2.target.error);
+                console.error("Error al insertar en IndexedDB", event2.target.error);
             };
         };
         request.onerror = event => {
-            console.error("Error al abrir Indexed", event.target.error);
+            console.error("Error al abrir IndexedDB", event.target.error);
         };
     };
 
@@ -50,7 +49,8 @@ const Register = () => {
                 body: JSON.stringify(userData),
             });
             if (response.ok) {
-                console.log('el usuario se creó en MongoDB');
+                console.log('El usuario se creó en MongoDB');
+                alert('Tu registro fue exitoso:)'); // ✅ Se agregó el alert cuando el registro es exitoso
             } else {
                 console.error('Error al crear el usuario');
             }
@@ -62,6 +62,7 @@ const Register = () => {
                     sw.sync.register("syncUsers");
                 });
             }
+            alert('No hay conexión. Usuario registrado en IndexedDB.'); // ✅ Se agregó el alert en caso de error
         }
     };
 
