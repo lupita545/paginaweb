@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('iniciando sesión con:', credentials);
+    console.log('Iniciando sesión con:', credentials);
 
     try {
       const response = await fetch('/api/login', {
@@ -25,11 +25,17 @@ const Login = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Error al iniciar');
+        throw new Error('Error al iniciar sesión');
       }
 
       const data = await response.json();
-      alert("Bienvenido"); // ✅ Se agregó el alert cuando el inicio de sesión es exitoso
+      console.log('Inicio de sesión correcto:', data);
+
+      // Aseguramos que el alert se muestre después de la respuesta
+      setTimeout(() => {
+        alert("Bienvenido");
+      }, 100);
+     
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);

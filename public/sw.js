@@ -114,7 +114,7 @@ self.addEventListener('sync', event => {
 });
 
 self.addEventListener('push', event => {
-    self.registration.showNotification("Tienes una notificación");
+    self.registration.showNotification("Hola, bienvenido");
 });
 
 
