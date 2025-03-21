@@ -38,7 +38,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Conexión a la base de datos Mongo
-const uri = 'mongodb+srv://lupi11:lupi11@cluster0.35uvk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = 'mongodb+srv://jime123:jime123@cluster0.vj37dkd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.info('Conexión exitosa a MongoDB'))
     .catch(err => console.error('Error al conectar a MongoDB:', err));
